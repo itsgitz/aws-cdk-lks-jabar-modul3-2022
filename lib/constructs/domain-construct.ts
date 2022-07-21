@@ -19,5 +19,10 @@ export class DomainConstruct extends Construct {
       domainName: wildCardDomain,
       validation: acm.CertificateValidation.fromDns(zone)
     });
+
+    const rootCertificate = new acm.Certificate(this, 'RootCertificate', {
+      domainName: domainName,
+      validation: acm.CertificateValidation.fromDns(zone)
+    });
   }
 }
