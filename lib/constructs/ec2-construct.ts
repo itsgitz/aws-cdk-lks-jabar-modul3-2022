@@ -71,7 +71,7 @@ export class EC2Construct extends Construct {
       minCapacity: 2,
       desiredCapacity: 2,
       maxCapacity: 4,
-      vpcSubnets: privateSubnets
+      vpcSubnets: privateSubnets,
     })  
 
     const bastion = new ec2.Instance(this, 'BastionHost', {
